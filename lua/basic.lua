@@ -12,7 +12,7 @@
 
 
 -- 设置全局编码模式
-vim.g.encoding = 'UTF-8'
+vim.g.encoding = 'utf-8'
 vim.o.fileencoding = 'utf-8'
 
 
@@ -64,7 +64,7 @@ vim.o.smartcase = true
 vim.o.hlsearch = true
 
 -- 命令行高
-vim.o.cmdheight = 1
+vim.o.cmdheight = 2
 
 -- 当文件被外部修改时,自动加载
 vim.o.autoread = true
