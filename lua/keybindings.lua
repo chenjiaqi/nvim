@@ -9,6 +9,7 @@
 -- [options] 大部分设置为 {noremap = true, silent = true} 表示不会重新映射, 不输出多余信息
 -- -----------------------------------------
 
+local pluginKeys = {}
 -- 设置一个Leader键 反斜杠
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
@@ -40,12 +41,37 @@ map("n", "<C-d>", "9j", opt)
 -- BufferLine
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
-map("n", "<C-w>", ":Bdelete!<CR>", opt)
+map("n", "<C-q>", ":Bdelete!<CR>", opt)
 
+-- Telescope
+-- 查找文件
+map("n", "<C-p>", ":Telescope find_files<CR>", opt)
+-- 全局搜索
+map("n", "<C-f>", ":Telescope live_grep<CR>", opt)
+
+
+-- Telescope 列表中 插入模式快捷键
+pluginKeys.telescopeList = {
+  i = {
+    -- 上下移动
+    ["<C-j>"] = "move_selection_next",
+    ["<C-k>"] = "move_selection_previous",
+    ["<Down>"] = "move_selection_next",
+    ["<Up>"] = "move_selection_previous",
+    -- 历史记录
+    ["<C-n>"] = "cycle_history_next",
+    ["<C-p>"] = "cycle_history_prev",
+    -- 关闭窗口
+    ["<C-c>"] = "close",
+    -- 预览窗口上下滚动
+    ["<C-u>"] = "preview_scrolling_up",
+    ["<C-d>"] = "preview_scrolling_down",
+  },
+}
 
 
 -- NvimTree
-local pluginKeys = {}
+
 -- nvim-tree
 -- alt + m 键打开关闭tree
 map("n", "<C-e>", ":NvimTreeToggle<CR>", opt)
@@ -70,6 +96,8 @@ pluginKeys.nvimTreeList = {
   { key = "s", action = "system_open" },
   { key = "<C-e>", action = "close" },
 }
+
+
 
 
 return pluginKeys

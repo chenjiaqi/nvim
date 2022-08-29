@@ -14,6 +14,17 @@ packer.startup({
    use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
    -- buffer line 标签页
    use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" }})
+
+   -- lua line 标签页
+   use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
+   use("arkav/lualine-lsp-progress")
+
+   -- 模糊搜索软件
+   use { 'nvim-telescope/telescope.nvim', requires = { "nvim-lua/plenary.nvim" } }
+   -- 代码配色插件
+   use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
+
+   -- 模糊搜索软件
   end,
 
 
