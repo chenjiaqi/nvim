@@ -11,8 +11,8 @@
 
 local pluginKeys = {}
 -- 设置一个Leader键 反斜杠
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+vim.g.mapleader = ";"
+vim.g.maplocalleader = ";"
 
 -- 定义两个变量, 保存vim.api.nvim_set_keymap, opt
 local map = vim.api.nvim_set_keymap
@@ -26,8 +26,8 @@ map('n', '<C-w>K', ':resize -4<CR>', opt)
 
 map('n', '<C-w>K', ':resize -4<CR>', opt)
 
-map("n", "<leader>t", ":sp | terminal<CR>i", opt)
-map("t", "<Esc>", "<C-\\><C-n>:q<CR>", opt)
+-- map("n", "<leader>t", ":sp | terminal<CR>i", opt)
+-- map("t", "<Esc>", "<C-\\><C-n>:q<CR>", opt)
 
 
 -- 上下滚动
@@ -68,9 +68,25 @@ pluginKeys.telescopeList = {
     ["<C-d>"] = "preview_scrolling_down",
   },
 }
-
-
 -- NvimTree
+-- lsp 回调函数快捷键设置
+pluginKeys.mapLSP = function(mapbuf)
+  -- rename
+  mapbuf("n", "<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>", opt)
+  -- code action
+  mapbuf("n", "<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>", opt)
+  -- go xx
+  mapbuf("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", opt)
+  mapbuf("n", "gh", "<cmd>lua vim.lsp.buf.hover()<CR>", opt)
+  mapbuf("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", opt)
+  mapbuf("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opt)
+  mapbuf("n", "gr", "<cmd>lua vim.lsp.buf.references()<CR>", opt)
+  -- diagnostic
+  mapbuf("n", "gp", "<cmd>lua vim.diagnostic.open_float()<CR>", opt)
+  mapbuf("n", "gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opt)
+  mapbuf("n", "gj", "<cmd>lua vim.diagnostic.goto_next()<CR>", opt)
+  mapbuf("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
+end
 
 -- nvim-tree
 -- alt + m 键打开关闭tree
@@ -98,6 +114,12 @@ pluginKeys.nvimTreeList = {
 }
 
 
-
+  -- 终端配置
+pluginKeys.mapToggleTerm = function(toggleterm)
+  vim.keymap.set({ "n", "t" }, "<leader>ta", toggleterm.toggleA)
+  vim.keymap.set({ "n", "t" }, "<leader>tb", toggleterm.toggleB)
+  vim.keymap.set({ "n", "t" }, "<leader>tc", toggleterm.toggleC)
+  vim.keymap.set({ "n", "t" }, "<leader>tg", toggleterm.toggleG)
+end
 
 return pluginKeys

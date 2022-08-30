@@ -7,4 +7,5 @@ require('plugin-config/bufferline')
 require('plugin-config/lualine')
 require('plugin-config/telescope')
 require('plugin-config/nvim-treesitter')
-
+require("plugin-config.toggleterm")
+require('lsp/setup')

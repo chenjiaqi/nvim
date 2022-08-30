@@ -24,7 +24,15 @@ packer.startup({
    -- 代码配色插件
    use({ "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" })
 
-   -- 模糊搜索软件
+   -- 终端
+   use({ "akinsho/toggleterm.nvim" })
+
+   --------------------- LSP --------------------
+   use("williamboman/nvim-lsp-installer")
+   -- Lspconfig
+   use("neovim/nvim-lspconfig")
+
+   use("folke/lua-dev.nvim")
   end,
 
 

@@ -64,7 +64,7 @@ vim.o.smartcase = true
 vim.o.hlsearch = true
 
 -- 命令行高
-vim.o.cmdheight = 2
+vim.o.cmdheight = 5
 
 -- 当文件被外部修改时,自动加载
 vim.o.autoread = true
