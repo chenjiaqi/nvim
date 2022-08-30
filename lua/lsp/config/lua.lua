@@ -2,7 +2,6 @@
 local runtime_path = vim.split(package.path, ";")
 table.insert(runtime_path, "lua/?.lua")
 table.insert(runtime_path, "lua/?/init.lua")
-
 local opts = {
   settings = {
     Lua = {
@@ -54,7 +53,7 @@ local opts = {
 
 return {
   on_setup = function(server)
-    opts = require("lua-dev").setup({ lspconfig = opts })
-    server.setup(opts)
+    local configs = require("lua-dev").setup({ lspconfig = opts })
+    server.setup(configs)
   end,
 }
