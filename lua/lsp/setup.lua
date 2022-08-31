@@ -4,6 +4,7 @@ require("nvim-lsp-installer").setup({
   automatic_installation = true,
 })
 local lspconfig = require("lspconfig")
+lspconfig.preview_float = true
 
 -- 安装列表
 -- { key: 服务器名， value: 配置文件 }

@@ -15,7 +15,6 @@
 vim.g.encoding = 'utf-8'
 vim.o.fileencoding = 'utf-8'
 
-
 -- 使用JK移动时,保留8行
 vim.o.scrolloff = 8
 vim.o.sidescrolloff = 8
@@ -64,7 +63,7 @@ vim.o.smartcase = true
 vim.o.hlsearch = true
 
 -- 命令行高
-vim.o.cmdheight = 5
+vim.o.cmdheight = 2
 
 -- 当文件被外部修改时,自动加载
 vim.o.autoread = true

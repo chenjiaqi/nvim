@@ -51,6 +51,9 @@ packer.startup({
    use("onsails/lspkind-nvim")
    use("tami5/lspsaga.nvim")
 
+   -- 代码格式化工具
+   use("mhartington/formatter.nvim")
+
 
   end,
 

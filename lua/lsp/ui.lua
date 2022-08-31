@@ -4,7 +4,7 @@ vim.diagnostic.config({
   signs = true,
   update_in_insert = false,
 })
-local signs = { Error = "E ", Warn = "W ", Hint = "H ", Info = "I " }
+local signs = { Error = " ", Warn = " ", Hint = " ", Info = " " }
 for type, icon in pairs(signs) do
   local hl = "DiagnosticSign" .. type
   vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
@@ -29,30 +29,30 @@ lspkind.init({
   --
   -- default: {}
   symbol_map = {
-    Text = "T",
-    Method = "M",
-    Function = "f",
-    Constructor = "c",
-    Field = "F",
-    Variable = "V",
-    Class = "C",
-    Interface = "I",
-    Module = "M",
+    Text = "",
+    Method = "",
+    Function = "",
+    Constructor = "",
+    Field = "ﰠ",
+    Variable = "",
+    Class = "ﴯ",
+    Interface = "",
+    Module = "",
     Property = "ﰠ",
-    Unit = "U",
-    Value = "v",
-    Enum = "E",
-    Keyword = "key",
-    Snippet = "snp",
+    Unit = "塞",
+    Value = "",
+    Enum = "",
+    Keyword = "",
+    Snippet = "",
     Color = "",
     File = "",
     Reference = "",
     Folder = "",
-    EnumMember = "en",
-    Constant = "const",
-    Struct = "S",
+    EnumMember = "",
+    Constant = "",
+    Struct = "פּ",
     Event = "",
-    Operator = "O",
+    Operator = "",
     TypeParameter = "",
   },
 })
@@ -62,13 +62,13 @@ lspsaga.setup({ -- defaults ...
   debug = false,
   use_saga_diagnostic_sign = true,
   -- diagnostic sign
-  error_sign = "E",
-  warn_sign = "W",
-  hint_sign = "H",
-  infor_sign = "I",
+  error_sign = "",
+  warn_sign = "",
+  hint_sign = "",
+  infor_sign = "",
   diagnostic_header_icon = "   ",
   -- code action title icon
-  code_action_icon = "A",
+  code_action_icon = " ",
   code_action_prompt = {
     enable = true,
     sign = true,

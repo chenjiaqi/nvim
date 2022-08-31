@@ -41,7 +41,7 @@ map("n", "<C-d>", "9j", opt)
 -- BufferLine
 map("n", "<C-h>", ":BufferLineCyclePrev<CR>", opt)
 map("n", "<C-l>", ":BufferLineCycleNext<CR>", opt)
-map("n", "<C-q>", ":Bdelete!<CR>", opt)
+map("n", "<C-q>", ":bdelete!<CR>", opt)
 
 -- Telescope
 -- 查找文件
@@ -122,6 +122,7 @@ pluginKeys.mapToggleTerm = function(toggleterm)
   vim.keymap.set({ "n", "t" }, "<leader>tg", toggleterm.toggleG)
 end
 
+------------------------------------------------------------------------------
 -- nvim-cmp 自动补全
 pluginKeys.cmp = function(cmp)
   local feedkey = function(key, mode)
@@ -167,6 +168,7 @@ pluginKeys.cmp = function(cmp)
       end
     end, { "i", "s" }),
 
+    --[[
     -- super Tab
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
@@ -188,6 +190,7 @@ pluginKeys.cmp = function(cmp)
       end
     end, { "i", "s" }),
     -- end of super Tab
+    --]]
   }
 end
 
