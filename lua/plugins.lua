@@ -54,6 +54,9 @@ packer.startup({
    -- 代码格式化工具
    use("mhartington/formatter.nvim")
 
+   -- 代码格式化工具
+   use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
 
   end,
 
