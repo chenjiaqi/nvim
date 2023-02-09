@@ -123,4 +123,21 @@ vim.o.showtabline = 2
 -- 使用增强状态栏插件后不需要vim的模式提示
 vim.o.showmode = false
 
+-- tex 设置
+vim.g.tex_flavor = 'xelatex'
+vim.g.tex_compiler_latexmk_engines = {
+     '-xelatex' ,
+     '-synctex=1',
+     '-interaction=nonstopmode',
+     '-file-line-error',
+     '-pdf',
+     '-outdir=%OUTDIR%',
+     '%DOC%'
+   }
+
+vim.g.vimtex_view_method = 'zathura'
+vim.g.vimtex_quickfix_mode = 0
+vim.g.vimtex_general_viewer = 'zathura'
+vim.g.vimtex_compiler_progname = 'nvr'
+vim.g.vimtex_quickfix_open_on_warning = 0
 
