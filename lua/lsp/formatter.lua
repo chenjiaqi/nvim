@@ -39,6 +39,15 @@ formatter.setup({
           stdin = true,
         }
       end,
+    },
+    cpp = {
+      function()
+        return {
+          exe = "clang-format",
+          filetype = { "cpp", "cc"},
+          stdin = true,
+        }
+      end,
     }
   },
 })
