@@ -25,7 +25,6 @@ formatter.setup({
       function()
         return {
           exe = "rustfmt",
-
           args = { "--emit=stdout" },
           stdin = true,
         }
@@ -45,6 +44,16 @@ formatter.setup({
         return {
           exe = "clang-format",
           filetype = { "cpp", "cc"},
+          stdin = true,
+        }
+      end,
+    },
+    python = {
+      function()
+        return {
+          exe = "black",
+          args = { "-" },
+          filetype = { "py"},
           stdin = true,
         }
       end,

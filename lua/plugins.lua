@@ -13,7 +13,7 @@ packer.startup({
    -- nvim-tree
    use({ "kyazdani42/nvim-tree.lua", requires = "kyazdani42/nvim-web-devicons" })
    -- buffer line 标签页
-   use({ "akinsho/bufferline.nvim", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye" }})
+   use({ "akinsho/bufferline.nvim", tag ="*", requires = { "kyazdani42/nvim-web-devicons", "moll/vim-bbye"}})
 
    -- lua line 标签页
    use({ "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons" } })
@@ -33,6 +33,7 @@ packer.startup({
    use("neovim/nvim-lspconfig")
 
    use("folke/lua-dev.nvim")
+   use("folke/neodev.nvim")
 
    -- 代码补全
    use("hrsh7th/nvim-cmp")

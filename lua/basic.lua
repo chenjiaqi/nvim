@@ -141,3 +141,4 @@ vim.g.vimtex_general_viewer = 'zathura'
 vim.g.vimtex_compiler_progname = 'nvr'
 vim.g.vimtex_quickfix_open_on_warning = 0
 
+
