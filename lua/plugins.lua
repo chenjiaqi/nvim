@@ -61,6 +61,19 @@ packer.startup({
    -- latex
    use("lervag/vimtex")
 
+   -- 注释生成
+   use({"danymat/neogen",
+      requires = "nvim-treesitter/nvim-treesitter",
+      config = function()
+        require('neogen').setup {
+          languages = {
+          ['cpp.doxygen'] = require('neogen.configurations.cpp')
+        }
+    }
+      end,
+      -- Uncomment next line if you want to follow only stable versions
+      -- tag = "*"
+    })
 
   end,
 
