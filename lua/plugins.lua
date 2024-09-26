@@ -61,6 +61,8 @@ packer.startup({
    -- latex
    use("lervag/vimtex")
 
+   use('Exafunction/codeium.vim')
+
    -- 注释生成
    use({"danymat/neogen",
       requires = "nvim-treesitter/nvim-treesitter",

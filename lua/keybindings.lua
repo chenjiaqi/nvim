@@ -87,7 +87,7 @@ pluginKeys.mapLSP = function(mapbuf)
   mapbuf("n", "gp", "<cmd>lua vim.diagnostic.open_float()<CR>", opt)
   mapbuf("n", "gk", "<cmd>lua vim.diagnostic.goto_prev()<CR>", opt)
   mapbuf("n", "gj", "<cmd>lua vim.diagnostic.goto_next()<CR>", opt)
-  mapbuf("n", "<leader>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opt)
+  mapbuf("n", "<leader>f", "<cmd>lua vim.lsp.buf.format()<CR>", opt)
 end
 
 -- nvim-tree

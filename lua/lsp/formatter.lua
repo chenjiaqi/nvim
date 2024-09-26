@@ -57,7 +57,17 @@ formatter.setup({
           stdin = true,
         }
       end,
-    }
+    },
+    csharp = {
+      function()
+        return {
+          exe = "dotnet-csharpier",
+          args = {"--write-stdout -"},
+          filetype = { "cs"},
+          stdin = false,
+        }
+      end,
+    },
   },
 })
 
@@ -66,7 +76,7 @@ vim.api.nvim_exec(
   [[
 augroup FormatAutogroup
   autocmd!
-  autocmd BufWritePost *.js,*.rs,*.lua FormatWrite
+  autocmd BufWritePost *.js,*.rs,*.lua,*.cs FormatWrite
 augroup END
 ]],
   true
