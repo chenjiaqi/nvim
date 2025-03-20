@@ -22,7 +22,7 @@ telescope.setup({
       -- theme = "dropdown", 
 			-- find_command = { "rg", "--files", "--glob", "!.git/*" },
       -- 忽略　build 路径
-      file_ignore_patterns = {"build", ".hex"}, 
+      file_ignore_patterns = {"build", ".hex", ".dll",".mp3",".bin",".cache","_site",".pdb", "obj"}, 
     }
   },
   extensions = {

@@ -18,6 +18,7 @@ local servers = {
   pyright = require("lsp.config.pyright"),
   ltex = require("lsp.config.tex"),
   csharp_ls = require("lsp.config.csharp"),
+  -- omisharp = require("lsp.config.csharp"),
   -- html = require("lsp.config.html"),
   -- cssls = require("lsp.config.css"),
   -- emmet_ls = require("lsp.config.emmet"),
